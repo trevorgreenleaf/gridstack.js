@@ -1,15 +1,17 @@
 {
   "name": "gridstack",
-  "version": "0.3.0",
+  "version": "1.0.0-dev",
   "description": "gridstack.js is a jQuery plugin for widget layout",
   "main": "dist/gridstack.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/troolee/gridstack.js.git"
+    "url": "git+https://github.com/gridstack/gridstack.js.git"
   },
   "scripts": {
-    "build": "grunt",
-    "test": "karma start karma.conf.js"
+    "build": "grunt && doctoc ./README.md && doctoc ./doc/README.md && doctoc ./doc/CHANGES.md",
+    "test": "grunt lint && karma start karma.conf.js",
+    "lint": "grunt lint",
+    "reset": "rm -rf dist node_modules"
   },
   "keywords": [
     "gridstack",
@@ -19,11 +21,14 @@
     "jquery"
   ],
   "author": "Pavel Reznikov <pashka.reznikov@gmail.com>",
+  "contributors": [
+    "Dylan Weiss <dylan.weiss@gmail.com> (https://dylandreams.com)"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/troolee/gridstack.js/issues"
+    "url": "https://github.com/gridstack/gridstack.js/issues"
   },
-  "homepage": "http://troolee.github.io/gridstack.js/",
+  "homepage": "http://gridstack.github.io/gridstack.js/",
   "dependencies": {
     "jquery": "^3.1.0",
     "jquery-ui": "^1.12.0",
@@ -31,6 +36,7 @@
   },
   "devDependencies": {
     "connect": "^3.4.1",
+    "components-jqueryui": "1.12.1",
     "coveralls": "^2.11.8",
     "doctoc": "^1.3.0",
     "grunt": "^1.0.1",
@@ -41,7 +47,6 @@
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "^2.3.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-doctoc": "https://github.com/nickyout/grunt-doctoc.git#master",
     "grunt-jscs": "^3.0.1",
     "grunt-protractor-runner": "^5.0.0",
     "grunt-protractor-webdriver": "^0.2.5",
